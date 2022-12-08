@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ludo.css">
+    <title>Ludo Games</title>
+</head>
+<body>
+      <div class="container">
+          <h2 id="result">Vinod</h2>
+          <div class="img_container">
+
+            <div class="image">
+                <h3>Player1</h3>
+                <img id="player1" src="dice1.png" alt="dice">
+            </div>
+
+            <div class="image" id="player1">
+                <h3>Player2</h3>
+                <img id="player2" src="dice1.png" alt="dice">
+            </div>
+
+          </div>
+          <div class="btn">
+            <button onclick="turnManip()">CLICK ME</button>
+          </div>
+      </div>
+</body>
+<script>
+     const turnManip=()=>{
+        const play1=Math.floor(Math.random()*6)+1;
+        const p1=`dice${play1}.png`; 
+        document.getElementById('player1').setAttribute('src',p1);
+
+        const play2=Math.floor(Math.random()*6)+1;
+        const p2=`dice${play2}.png`; 
+        document.getElementById('player2').setAttribute('src',p2);
+       
+        if(play1==play2)
+        {document.getElementById('result').innerHTML='Match Drawen';}
+        else if(play1>play2){document.getElementById('result').innerHTML='Player 1 Win';}
+        else{document.getElementById('result').innerHTML='Player 2 Win';}
+        
+
+     }
+</script>
+</html>
